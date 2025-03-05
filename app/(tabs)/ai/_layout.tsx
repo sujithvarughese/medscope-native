@@ -3,7 +3,7 @@ import {Stack} from "expo-router";
 
 const AiLayout = () => {
   return (
-    <Stack>
+    <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" options={{ title: '' }}/>
       <Stack.Screen name="modeSelect" options={{ title: '' }}/>
 
@@ -12,7 +12,7 @@ const AiLayout = () => {
       <Stack.Screen name="assessmentGoalsForm" options={{title: '',}}/>
       <Stack.Screen name="assessmentResults" />
 
-      <Stack.Screen name="symptomSelect" />
+      <Stack.Screen name="symptomSelect" options={{ headerShown: false}}/>
       <Stack.Screen name="symptomCheckerForm" />
       <Stack.Screen name="symptomResults" />
 

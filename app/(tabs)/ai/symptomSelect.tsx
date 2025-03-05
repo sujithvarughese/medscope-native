@@ -16,21 +16,21 @@ const SymptomSelect = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Symptom Select</Text>
+      <Text>Select your symptoms to continue</Text>
       <View>
         <Pressable onPress={() => setShowSymptomsSelect(true)}>
-          <MaterialIcons name="add-circle" size={24} color="black" />
+          <MaterialIcons name="add-circle" size={104} color="dodgerblue" />
         </Pressable>
 
         {symptoms.map(item =>
-          <View key={item} style={styles.listItem}>
-            <Text>{item}</Text>
-            <Pressable onPress={() => dispatch(removeSymptoms(item))}>
-              <MaterialCommunityIcons name="delete-circle-outline" size={24} color="black" />
-            </Pressable>
-          </View>
-
+        <View key={item} style={styles.listItem}>
+          <Text>{item}</Text>
+          <Pressable onPress={() => dispatch(removeSymptoms(item))}>
+            <MaterialCommunityIcons name="delete-circle-outline" size={24} color="black" />
+          </Pressable>
+        </View>
         )}
+
         <SelectorModal
           visible={showSymptomsSelect}
           close={() => setShowSymptomsSelect(false)}
@@ -41,8 +41,9 @@ const SymptomSelect = () => {
           }}
         />
       </View>
+
       <View style={styles.buttonContainer}>
-        <Button onPress={() => router.navigate("/ai/symptomCheckerForm")}>Continue</Button>
+        {!!symptoms.length && <Button onPress={() => router.navigate("/ai/symptomCheckerForm")}>Continue</Button>}
       </View>
 
     </View>
@@ -52,7 +53,7 @@ const SymptomSelect = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   listItem: {

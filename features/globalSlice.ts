@@ -56,6 +56,7 @@ export type Props = {
     }
   },
   results: {
+    healthTip: string,
     conditionInfo: {
       name: string,
       overview: string,
@@ -157,6 +158,7 @@ const initialState: Props = {
     }
   },
   results: {
+    healthTip: "",
     conditionInfo: {
       name: "",
       overview: "",
@@ -324,6 +326,17 @@ const globalSlice = createSlice({
     }
   },
   extraReducers: builder => {
+    builder.addCase(fetchHealthTip.fulfilled, (state, action) => {
+      state.results.healthTip = action.payload
+      state.loading = false
+    })
+    builder.addCase(fetchHealthTip.rejected, (state, action) => {
+      state.loading = false
+      console.log("Failed to fetch response")
+    })
+    builder.addCase(fetchHealthTip.pending, (state, action) => {
+      state.loading = true
+    })
     builder.addCase(fetchConditionInfo.fulfilled, (state, action) => {
       state.results.conditionInfo.name = action.payload.conditionInfo.name
       state.results.conditionInfo.overview = action.payload.conditionInfo.overview
@@ -415,6 +428,28 @@ const globalSlice = createSlice({
     builder.addCase(fetchBmiResults.pending, (state, action) => {
       state.loading = true
     })
+  }
+})
+
+export const fetchHealthTip = createAsyncThunk('global/fetchHealthTip', async  (payload) => {
+  try {
+    const response = await openai.post("", {
+      model: "gpt-3.5-turbo-0125",
+      max_tokens: 400,
+      messages: [
+        {
+          role: "system",
+          content: 'You are a helpful assistant designed to provide a random general tip about overall health in 2-3 sentences.'
+        },
+        {
+          role: "user",
+          content: `Please provide a general health tip for an adult. Keep the response between 2-3 sentences`
+        }
+      ]
+    })
+    return response.data.choices[0].message.content
+  } catch (error) {
+    console.log(error)
   }
 })
 

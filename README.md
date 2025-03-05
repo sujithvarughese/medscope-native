@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+# Medical App README
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+This Medical App is a comprehensive health assistance application that helps users understand possible conditions based on their symptoms, search for information on various drugs and medical conditions, and receive a general health assessment based on their profile. This app aims to provide users with accurate and reliable medical information while promoting better health awareness.
 
-## Get started
+## Features
+### 1. Symptom Checker
+- Input your symptoms and receive a list of possible conditions.
+- Get detailed descriptions of potential health issues.
+- Understand the severity and recommended next steps.
 
-1. Install dependencies
+### 2. Drug and Condition Search
+- Look up any drug for dosage, side effects, and interactions.
+- Search for medical conditions to understand symptoms, treatments, and prevention methods.
+- Access up-to-date medical information from trusted sources.
 
-   ```bash
-   npm install
-   ```
+### 3. General Health Assessment
+- Create a user profile with basic health details.
+- Receive personalized health insights based on age, weight, lifestyle, and medical history.
+- Get recommendations for healthier habits and preventive care.
 
-2. Start the app
+## Installation
+1. Download and install the app from the App Store or Google Play.
+2. Open the app and create an account.
+3. Set up your profile with basic health information.
+4. Start using the app to check symptoms, search for medical information, and get health assessments.
 
-   ```bash
-    npx expo start
-   ```
+## Usage
+- **Checking Symptoms**: Enter your symptoms in the symptom checker to receive possible conditions.
+- **Searching for Drugs and Conditions**: Use the search bar to find information on medications and health issues.
+- **Getting a Health Assessment**: Fill out your profile to receive a general health analysis and recommendations.
 
-In the output, you'll find options to open the app in a
+## Privacy & Security
+- All personal health data is securely stored and encrypted.
+- The app follows HIPAA compliance for data protection.
+- Users have control over their data and can delete their profile at any time.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Disclaimer
+This app is for informational purposes only and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions regarding a medical condition.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

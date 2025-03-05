@@ -1,12 +1,14 @@
-import {SafeAreaView, StyleSheet, Text, View} from "react-native";
+import {ImageBackground, SafeAreaView, StyleSheet, Text, View} from "react-native";
 import {Link} from "expo-router";
 import AntDesign from '@expo/vector-icons/AntDesign';
+// @ts-ignore
+import bg1 from "../../../assets/images/bg-1.jpeg"
 
 const ModeSelect = () => {
 
   return (
-    <View style={styles.container}>
-
+    <ImageBackground source={bg1} style={styles.background}>
+      <View style={styles.container}>
       <Text style={styles.title}>Powerful AI-based Health Tools</Text>
 
       <View style={styles.buttonContainer}>
@@ -22,7 +24,6 @@ const ModeSelect = () => {
           </View>
         </Link>
 
-
         <Link href="/ai/assessmentProfileForm" style={styles.link}>
           <View style={styles.linkContent}>
             <View style={styles.textContainer}>
@@ -34,7 +35,6 @@ const ModeSelect = () => {
             </View>
           </View>
         </Link>
-
 
         <Link href="/ai/bmiForm" style={styles.link}>
           <View style={styles.linkContent}>
@@ -48,20 +48,28 @@ const ModeSelect = () => {
           </View>
         </Link>
       </View>
-
     </View>
+  </ImageBackground>
+
+
+
+
  );
 };
 
 const styles = StyleSheet.create({
+  background: {
+    height: "100%",
+  },
   container: {
+    padding: 20,
+    paddingTop: 60,
     flex: 1,
-    gap: 16,
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    gap: 30
   },
   title: {
-    fontSize: 20
+    fontSize: 20,
+    textAlign: "center",
   },
   buttonContainer: {
     width: "100%",
@@ -82,7 +90,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     borderRadius: 10,
-    width: "90%",
     paddingVertical: 50,
     paddingHorizontal: 20,
     flexDirection: "row",
@@ -96,14 +103,15 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   textContainer: {
-    width: "80%"
+    width: "80%",
+    gap: 12,
   },
   text: {
     width: "100%",
   },
   heading: {
-    fontSize: 20,
-    fontWeight: "800",
+    fontSize: 18,
+    fontWeight: "700",
   },
   description: {
 
